@@ -24,9 +24,9 @@ export class UserService{
     async getStudentByUsername(username: string): Promise<User> {
         const currUser = await this.userRepository.findOne({
             where: { username },
-            relations: ['roles', 'roles.permissions']
+            relations: ['roles', 'roles.permissions'] 
         });
-
+        
         if(!currUser) {
             throw new NotFoundException('User not found');
         }

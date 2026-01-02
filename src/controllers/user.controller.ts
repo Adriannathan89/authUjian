@@ -14,6 +14,7 @@ export class UserController {
         await this.userService.assignRoleToStudent(newUser.username);
         return { 
             success: true,
+            payload: newUser
         };
     }
 
@@ -23,6 +24,7 @@ export class UserController {
         await this.userService.assignRoleToTeacher(newUser);
         return { 
             success: true,
+            payload: newUser,
         };
     }
 }

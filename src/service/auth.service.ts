@@ -31,8 +31,9 @@ export class AuthService {
             permissions: permisions
         };
 
-        
+
         return {
+            userId: currUser.id,
             access_token: this.jwtService.sign(payload),
         };
     }
